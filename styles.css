@@ -22,13 +22,14 @@ body {
     
     /* ---- */
 
-    min-height: 100vh;
-    overflow-x: hidden;
+    min-height: 100dvh;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     padding: 20px;
-    background-color:  #F5F5F5;
+    background-color: #F5F5F5;
+    overflow-x: hidden;
+    flex-direction: column;
 
   }
 
@@ -39,7 +40,7 @@ body {
 }
 
 #email {
-  flex: 1; 
+  flex: 1 1 auto; 
   min-width: 0;
   border: #FFFFFF ;
   
@@ -52,6 +53,7 @@ body {
     white-space: nowrap;
     background-color: #FF7043;
     color: #F5F5F5;
+    flex-shrink: 0;
 
   }
 
@@ -74,14 +76,14 @@ body {
     left: 30px;
     /* color: #F5F5F5; */
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #FF8A65;
 }
 
 
 #title {
     
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 4rem); /* Mínimo 2rem, ideal 5% del viewport, máximo 4rem */
     font-weight: 900;
     /* color:#A3D9A5; */
     /* color:#5C6BC0;
@@ -91,7 +93,7 @@ body {
 
 #subtitle {
     
-    font-size: 1.5rem;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 500;
   /* color: #2E2E2E; */
   color: #2E2E2E;
@@ -121,10 +123,11 @@ body {
     /* ---- */
 
     width: 100%;
-    max-width: 600px;
-    margin: 100px auto 0 auto;
-    /* padding: 1rem; */
+    max-width: clamp(280px, 80%, 1100px);
+    /* max-width: 600px; */
     text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .info {
@@ -141,6 +144,7 @@ body {
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     /* border: 1px solid red; */
     
     
@@ -149,7 +153,8 @@ body {
 #icons {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
+    font-size: clamp(1.3rem, 5vw, 1.5rem); /* Mínimo 2rem, ideal 5% del viewport, máximo 4rem */
 }
 
 #icons a {
@@ -213,11 +218,13 @@ body {
 
     .info-wrapper {
         /* border: 1px solid red; */
-        max-width: 60%;
+        /* max-width: 60%; */
+        /* max-width: clamp(280px, 80%, 700px); */
     }
 
     #email-form {
-        width: 50%;
+        width: clamp(300px, 60%, 500px);
+        /* width: 50%; */
         /* border: 1px solid green; */
     }
 
