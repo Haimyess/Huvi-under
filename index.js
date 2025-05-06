@@ -1,21 +1,7 @@
 
 console.log("Testing")
 
-// Reemplaza con tu configuración de Firebase
-// const firebaseConfig = {
-//     apiKey: "TU_API_KEY",
-//     authDomain: "TU_DOMINIO.firebaseapp.com",
-//     projectId: "TU_PROJECT_ID",
-//     storageBucket: "TU_BUCKET.appspot.com",
-//     messagingSenderId: "TU_ID",
-//     appId: "TU_APP_ID"
-//     };
 
-
-
-    // firebase.initializeApp(firebaseConfig);
-
-    // const db = firebase.firestore();
 
     const form = document.getElementById("email-form");
     const message = document.getElementById("message");
@@ -44,8 +30,35 @@ console.log("Testing")
         //     return;
         // }
 
-        console.log(`${email} ha sido registrado`)
-        message.textContent = "Thank you, We will keep you posted!";
+
+        try {
+            const res = await fetch("/.netlify/functions/hubspot-email-waitlist.js", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({ email })
+            });
+        
+            const data = await res.json();
+        
+            if (res.ok) {
+              message.textContent = "¡Gracias! Te avisaremos cuando lancemos.";
+              message.style.color = "green";
+              form.reset();
+            } else {
+              console.error("Error desde función:", data);
+              message.textContent = "Hubo un error. Inténtalo más tarde.";
+              message.style.color = "red";
+            }
+          } catch (err) {
+            console.error("Error de red:", err);
+            message.textContent = "Hubo un error al conectar. Inténtalo más tarde.";
+            message.style.color = "red";
+          }
+
+        // console.log(`${email} ha sido registrado`)
+        // message.textContent = "Thank you, We will keep you posted!";
 
         // -----------------------
 

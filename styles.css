@@ -123,7 +123,7 @@ body {
     /* ---- */
 
     width: 100%;
-    max-width: clamp(280px, 80%, 1100px);
+    max-width: clamp(400px, 80%, 1100px);
     /* max-width: 600px; */
     text-align: center;
     padding: 1rem;
