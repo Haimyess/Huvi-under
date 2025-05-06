@@ -32,7 +32,7 @@ console.log("Testing")
 
 
         try {
-            const res = await fetch("/.netlify/functions/hubspot-email-waitlist.js", {
+            const res = await fetch("/.netlify/functions/hubspot-email-waitlist", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"
