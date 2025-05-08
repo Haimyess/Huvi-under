@@ -74,7 +74,6 @@ body {
     position: absolute;
     top: 30px;
     left: 30px;
-    /* color: #F5F5F5; */
     font-weight: 700;
     font-size: 2rem;
     color: #FF8A65;
@@ -85,19 +84,17 @@ body {
     
     font-size: clamp(2rem, 5vw, 4rem); /* Mínimo 2rem, ideal 5% del viewport, máximo 4rem */
     font-weight: 900;
-    /* color:#A3D9A5; */
-    /* color:#5C6BC0;
-    
-    color: #8BC34A; */
+  
 }
 
 #subtitle {
     
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  /* font-size: clamp(1.5rem, 2.5vw, 2rem); */
   font-weight: 500;
-  /* color: #2E2E2E; */
+
   color: #2E2E2E;
-  /* text-transform: uppercase; */
+ 
   letter-spacing: 1px;
  
 
@@ -105,22 +102,13 @@ body {
 
 
 .coming {
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
     font-weight: 600;
     color: #2E2E2E;
 }
 
 .info-wrapper {
-
-    /* width: max-content;
-    height: max-content;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem; */
-
-
-    /* ---- */
 
     width: 100%;
     max-width: clamp(400px, 80%, 1100px);
@@ -134,7 +122,6 @@ body {
     display: flex;
     flex-direction: column ;
     gap: 1rem;
-    /* padding: .4rem; */
 }
 
 #social {
@@ -145,7 +132,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    /* border: 1px solid red; */
     
     
 }
@@ -164,13 +150,9 @@ body {
 
 #form-container {
     margin-top: 1.5rem;
-    /* padding: .6rem; */
 
 }
-.info-wrapper > div {
 
-    /* padding: 2rem; */
-}
 
 #contact {
     text-decoration: none;
@@ -179,6 +161,8 @@ body {
     font-weight: 500 ;
     color: #4A90E2 ;
 }
+
+
 
 @media screen  and (min-width: 600px){
     body {
@@ -216,11 +200,7 @@ body {
         text-align: start;
     }
 
-    .info-wrapper {
-        /* border: 1px solid red; */
-        /* max-width: 60%; */
-        /* max-width: clamp(280px, 80%, 700px); */
-    }
+   
 
     #email-form {
         width: clamp(300px, 60%, 500px);
@@ -232,6 +212,12 @@ body {
         /* border: 1px solid red; */
         display: flex;
         justify-content: center;
+    }
+
+    #join-btn:hover {
+        opacity: 90%;
+        background-color: #fd4f1f;;
+        cursor: pointer;
     }
     
     
