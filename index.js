@@ -19,7 +19,7 @@ console.log("Testing")
 
         // Valida formato de email
         if (!isValidEmail(email)) {
-            message.textContent = "Correo no válido.";
+            message.textContent = "Not valid email.";
             return;
         }
 
@@ -43,17 +43,17 @@ console.log("Testing")
             const data = await res.json();
         
             if (res.ok) {
-              message.textContent = "¡Gracias! Te avisaremos cuando lancemos.";
+              message.textContent = "¡Thank you! We'll let you know when we launch.";
               message.style.color = "green";
               form.reset();
             } else {
               console.error("Error desde función:", data);
-              message.textContent = "Hubo un error. Inténtalo más tarde.";
+              message.textContent = "There was an error. Please try again later.";
               message.style.color = "red";
             }
           } catch (err) {
             console.error("Error de red:", err);
-            message.textContent = "Hubo un error al conectar. Inténtalo más tarde.";
+            message.textContent = "There was an error connecting. Please try again later.";
             message.style.color = "red";
           }
 
